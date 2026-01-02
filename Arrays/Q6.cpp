@@ -1,4 +1,14 @@
+/*QUESTION 6
+Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list.
+*/
 
+
+//approach 
+//take  atemp variable at head , find the kth node from there by traversal 
+//then store the node next to kth node and break its link such that we get a linked list of knodes 
+//thenn use a reverse function on this linked list and if temp==head then after reversal store the new head or update the head 
+// after that store the prev node which will be the temp (beacuse temp was the 1st node in k node linked list but after reversal it became the last that is the node prev to next k node linked list)
+// after that reverse the next k node linked list in the same way and then if temp!=head connect the prev node to kthnode (because that become the first node of next k node linked after perdorming reversal)
 ListNode* getKthNode(ListNode* temp,int k){
     k-=1;
     while(temp!=NULL && k>0){
