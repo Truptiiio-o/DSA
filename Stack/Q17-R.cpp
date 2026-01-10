@@ -1,6 +1,6 @@
 void insert(stack<int> &str,int ele){
 
-  if(str.empty() || str.top<=ele){
+  if(str.empty() || str.top()<=ele){
     str.push(ele);
     return;
   }
@@ -16,5 +16,6 @@ void sortStack(stack<int> &str){
 
   int top=str.top();
   str.pop();
+  sortStack(str);
   insert(str,top);
 }
