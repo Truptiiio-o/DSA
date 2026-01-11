@@ -17,6 +17,7 @@ long long power(long long base, int exp, long long limit) {
     for (int i = 0; i < exp; i++) {
         result *= base;
         if (result > limit) return result; // early stop to avoid overflow
+        // cuz if already result>m it has to anyways reduce the high range to mid -1
     }
     return result;
 }
