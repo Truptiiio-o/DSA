@@ -12,18 +12,17 @@ Approach:
 class Solution {
 public:
     int maxDepth(string s) {
-        int opened = 0;
-        int ans = 0;
-
-        for(char c : s) {
-            if(c == '(') {
-                opened++;
-                ans = max(ans, opened);
-            } else if(c == ')') {
-                opened--;
+        int open=0;
+        int ans=0;
+        for(int i=0;i<s.length();i++){
+            if(s[i]=='('){
+                open++;
+                if(open>ans) ans++;
             }
+            else if(s[i]==')') open--;
+            else continue ;
         }
-
         return ans;
     }
 };
+// Tc=O(n)
