@@ -1,4 +1,5 @@
-class Solution {
+
+       class Solution {
 public:
     string frequencySort(string s) {
         unordered_map<char, int> freq;
@@ -8,23 +9,28 @@ public:
             freq[c]++;
         }
 
-        // 2. Put into a vector of pairs (char, frequency)
-        vector<pair<char, int>> arr;
+        // 2. Max-heap: (frequency, character)
+        priority_queue<pair<int,char>> pq;
+
         for(auto &p : freq) {
-            arr.push_back({p.first, p.second});
+            pq.push({p.second, p.first}); // (frequency, character)
         }
 
-        // 3. Sort by frequency in decreasing order
-        sort(arr.begin(), arr.end(), [](auto &a, auto &b) {
-            return a.second > b.second;
-        });
+        // 3. Build answer
+        string ans;
 
-        // 4. Build result string
-        string ans = "";
-        for(auto &p : arr) {
-            ans.append(p.second, p.first);  // repeat char p.first, p.second times
+        while(!pq.empty()) {
+            auto top = pq.top(); 
+            pq.pop();
+
+            int count = top.first;
+            char ch = top.second;
+
+            while(count--) ans += ch;
         }
 
-        return ans;
+        return ans;   // <-- this was missing
     }
 };
+
+;
