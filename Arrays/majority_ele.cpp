@@ -30,7 +30,7 @@ public:
         return candidate;
     }
 };
-
+////////////////////////////AFTER THIS CHECK ALSO WHETHER THE ELE IS ACTUALLY MAJORITY OR NOT BY COUNTING ITS APPREANCES IN THE ARRAY////////////////
 
 // same majorty element question for n/3 times 
 //APPROACH
