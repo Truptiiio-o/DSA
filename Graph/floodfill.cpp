@@ -48,3 +48,12 @@ public:
         return image;
     }
 };
+
+//APPROACH
+
+/*
+basically again we used bfs here cuz we have to go level wise rather than goin to depth of each node 
+if the adjacent nodes have colo same as the original or the satrt node then change them to given colo and proceed 
+simple bfs and return the changed matrix
+
+*/
