@@ -35,11 +35,11 @@ void addright(Node*root,vector<int> &res){
   Node*curr=root->right;
   vector<int> temp;
   while(curr){
-    if(!isleft(curr)) temp.push_back(curr->val);
+    if(!isLeaf(curr)) temp.push_back(curr->val);
     if(curr->right) curr=curr->right;
     else curr=curr->left;
   }
-  for(int i=temp.size();i>=0;i--){
+  for(int i=temp.size()-1;i>=0;i--){
     res.push_back(temp[i]);
   }
 }
