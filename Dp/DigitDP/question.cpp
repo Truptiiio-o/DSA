@@ -32,12 +32,8 @@ int solve(string& num, int n, int x, bool tight) {
     if (dp[n][x][tight] != -1) return dp[n][x][tight];
     
     int ans = 0;
-    
-    // Calculate the current index in the string (0-indexed)
-    int current_idx = num.length() - n;
-    
     // Set the upper bound for the digit we can place
-    int ub = tight ? (num[current_idx] - '0') : 9;
+    int ub = tight ? (num[num.length() - n] - '0') : 9;
     
     for (int i = 0; i <= ub; i++) {
         // The next state is tight ONLY IF the current state is tight 
