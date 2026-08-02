@@ -3,6 +3,10 @@
 //You use the mathematical principle of prefix sums:$$\text{Count in } [L, R] = solve(R) - solve(L - 1)
 //(Note: Since $L$ can be a massive string like $10^{18}$, subtracting 1 from a string representation requires a small helper function, or you just check if $L$ itself satisfies the condition and subtract it if it doesn't).
 
+//Given two large integers $L$ and $R$ (represented as strings) and a target integer $X$,
+//find the total number of integers in the inclusive range $[L, R]$ 
+//such that the sum of their digits is exactly equal to $X$.
+//"Because $L$ and $R$ can be extremely large (often up to $10^{18}$ or even $10^{100}$), they are passed as strings, and an $O(N)$ loop checking every number will result in a Time Limit Exceeded (TLE) error.
 
 #include <iostream>
 #include <vector>
